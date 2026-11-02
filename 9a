@@ -1,0 +1,36 @@
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int x[4], y[4], i, j;
+    float d;
+
+    printf("Enter 4 instances (two attributes):\n");
+    for(i = 0; i < 4; i++)
+        scanf("%d%d", &x[i], &y[i]);
+
+    printf("Dissimilarity Matrix:\n");
+
+    for(i = 0; i < 4; i++) {
+        for(j = 0; j < 4; j++) {
+            d = sqrt(pow(x[i]-x[j],2) +
+                     pow(y[i]-y[j],2));
+            printf("%.2f ", d);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+#output
+Enter 4 instances (two attributes):
+1 2
+2 3
+4 5
+5 6
+
+Dissimilarity Matrix:
+0.00 1.41 4.24 5.66
+1.41 0.00 2.83 4.24
+4.24 2.83 0.00 1.41
+5.66 4.24 1.41 0.00
